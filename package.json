@@ -9,6 +9,6 @@
   "author": "anabelen.garcia",
   "license": "ISC",
   "dependencies": {
-    "testcafe": "^1.15.0"
+    "testcafe": "1.15.0"
   }
 }
