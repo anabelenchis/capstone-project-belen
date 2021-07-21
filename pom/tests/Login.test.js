@@ -1,12 +1,12 @@
 import {CREDENTIALS, URLS, MESSAGES} from '../data/Constants'
 import loginPage from '../pages/LoginPage'
-import basePage from '../pages/BasePage'
+import todayPage from "../pages/TodayPage"
 
 fixture ('Login feature test').page `${URLS.LOGIN_URL}`
 
 test.skip('As a user I want to successfully login with valid credentials', async t => {
     await loginPage.submitLoginForm(CREDENTIALS.VALID_USER.USERNAME, CREDENTIALS.VALID_USER.PASSWORD)
-    await t.expect(basePage.pageTitle.exists).ok({timeout: 10000})
+    await t.expect(todayPage.pageTitle.exists).ok({timeout: 10000})
 })
 
 test.skip('As a user I should not be able to log in without providing any credentials', async t => {

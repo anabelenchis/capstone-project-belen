@@ -25,3 +25,18 @@ export const MESSAGES = {
         }
     }
 }
+
+export const DATE = {
+    TODAY: 'TODAY',
+    TOMORROW: 'TOMORROW'
+}
+
+export const NUMBER_OF_TASKS = {
+    MINIMUM: 1,
+    MAXIMUM: 3
+}
+
+export const NAME_OF_TASKS = {
+    TODAY: 'Tarea para hoy ',
+    TOMORROW: 'Tarea para maniana '
+}
