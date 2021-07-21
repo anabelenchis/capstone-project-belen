@@ -40,3 +40,8 @@ export const NAME_OF_TASKS = {
     TODAY: 'Tarea para hoy ',
     TOMORROW: 'Tarea para maniana '
 }
+
+export const PROJECT_ATTRIBUTES = {
+    PROJECT_TITLE: 'This is the title',
+    PROJECT_COLOR: 'Orange'
+}
