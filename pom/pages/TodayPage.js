@@ -13,6 +13,8 @@ class TodayPage {
         this.taskTitle = Selector('.task_list_item__content__wrapper')
         this.taskDescription = Selector('.task_description')
         this.taskCheckbox = Selector('.task_checkbox__circle')
+        this.deleteButton = Selector('.icon_menu_item__content').withText('Delete task')
+        this.confirmDeleteButton = Selector('.ist_button.ist_button_red').withText('Delete')
     }
 
     async createTask(numberOfTasks, date) {
@@ -35,10 +37,15 @@ class TodayPage {
         for (var i = 0; i < numberOfTasksCreated; i++) {
             await t.expect(this.taskTitle.nth(i).innerText).contains(NAME_OF_TASKS.TODAY + (i + 1))
         }
+        return true;
     }
     async clearTodayPage(numberOfTasksCreated) {
         for (var i = 0; i < numberOfTasksCreated; i++) {
-            await t.click(this.taskCheckbox.nth(i)).wait(1000)
+            await t
+                .rightClick(this.taskTitle)
+                .click(this.deleteButton)
+                .click(this.confirmDeleteButton).wait(1500)
+                
         }
     }
 }

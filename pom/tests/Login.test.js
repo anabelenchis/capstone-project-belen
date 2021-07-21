@@ -19,7 +19,7 @@ test.skip('As a user I should not be able to log in with an invalid password', a
     await t.expect(loginPage.errorMessage.innerText).contains(MESSAGES.ERROR.LOGIN_PAGE.INVALID_CREDENTIALS)
 })
 
-test('As a user I should not be able to login with invalid credentials', async t => {
+test.skip('As a user I should not be able to login with invalid credentials', async t => {
     await loginPage.submitLoginForm(CREDENTIALS.INVALID_USER.USERNAME, CREDENTIALS.INVALID_USER.PASSWORD)
     await t.expect(loginPage.errorMessage.innerText).contains(MESSAGES.ERROR.LOGIN_PAGE.INVALID_EMAIL)
 }) 
