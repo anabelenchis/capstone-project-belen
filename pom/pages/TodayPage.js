@@ -1,5 +1,7 @@
 import { Selector, t } from "testcafe"
 import { DATE, NAME_OF_TASKS } from '../data/Constants'
+import { ClientFunction } from 'testcafe';
+
 
 class TodayPage {
     constructor() {
@@ -22,12 +24,13 @@ class TodayPage {
             document.querySelector('#quick_add_task_holder').click()
         })
         let TASK_TITLE = (date == DATE.TODAY) ? NAME_OF_TASKS.TODAY : NAME_OF_TASKS.TOMORROW
-        await t.clickSubmit
+        
         //await t.doubleClick(this.addButton,  { speed: 0.5 }).wait(500)
         //await t.click(Selector('.user_avatar.big.settings_avatar'))
-        console.log('button clicked')
+        //console.log('button clicked')
         //await t.click(this.addButton)
         for (let i = 0; i < numberOfTasks; i++) {
+            await clickSubmit()
             console.log('inssside')
             //await t.click(Selector('.calendar_icon.date_today'))
             await t.typeText(this.taskTitleField, TASK_TITLE + (i + 1), { paste: true })
@@ -36,7 +39,7 @@ class TodayPage {
                     .click(this.dateButton)
                     .click(this.tomorrowDate)
                     .click(this.submitTaskButton)
-                    .wait(1000)
+                    .wait(1500)
                 : await t.click(this.submitTaskButton).wait(1500)
         }
     }
