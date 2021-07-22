@@ -4,7 +4,7 @@ import { DATE, NAME_OF_TASKS } from '../data/Constants'
 class TodayPage {
     constructor() {
         this.pageTitle = Selector('h1').withText('Today')
-        this.addButton = Selector('.empty-state-button').withText('Add a task')
+        this.addButton = Selector('#quick_add_task_holder')
         this.dateButton = Selector('.date.date_today')
         this.tomorrowDate = Selector('.scheduler-suggestions-item-label').withText('Tomorrow')
         this.taskTitleField = Selector('.public-DraftStyleDefault-block.public-DraftStyleDefault-ltr')
@@ -20,6 +20,7 @@ class TodayPage {
     async createTask(numberOfTasks, date) {
         let TASK_TITLE = (date == DATE.TODAY) ? NAME_OF_TASKS.TODAY : NAME_OF_TASKS.TOMORROW
         await t.doubleClick(this.addButton,  { speed: 0.5 }).wait(500)
+        console.log('button clicked')
         //await t.click(this.addButton)
         for (let i = 0; i < numberOfTasks; i++) {
             await t.click(Selector('.calendar_icon.date_today'))
