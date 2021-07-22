@@ -7,16 +7,16 @@ class TodayPage {
     constructor() {
         this.pageTitle = Selector('h1').withText('Today')
         this.addButton = Selector('#quick_add_task_holder')
-        this.dateButton = Selector('.date.date_today')
+        this.dateButton = Selector('.date_today')
         this.tomorrowDate = Selector('.scheduler-suggestions-item-label').withText('Tomorrow')
-        this.taskTitleField = Selector('.public-DraftStyleDefault-block.public-DraftStyleDefault-ltr')
+        this.taskTitleField = Selector('.public-DraftStyleDefault-ltr')
         this.taskDescriptionField = Selector('.task_editor__description_field')
         this.submitTaskButton = Selector('.reactist_button')
         this.taskTitle = Selector('.task_list_item__content__wrapper')
         this.taskDescription = Selector('.task_description')
         this.taskCheckbox = Selector('.task_checkbox__circle')
         this.deleteButton = Selector('.icon_menu_item__content').withText('Delete task')
-        this.confirmDeleteButton = Selector('.ist_button.ist_button_red').withText('Delete')
+        this.confirmDeleteButton = Selector('.ist_button_red').withText('Delete')
     }
 
     async createTask(numberOfTasks, date) {
