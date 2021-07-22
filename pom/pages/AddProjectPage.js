@@ -10,16 +10,16 @@ class AddProjectPage {
         this.colorSelectionButton = Selector('.color_dropdown_select__name').withText(PROJECT_ATTRIBUTES.PROJECT_COLOR)
         this.addButton = Selector('.ist_button.ist_button_red').withText('Add')
         this.projectInFavorites = Selector("li[data-type='project_list_item']")
-                            .nth(0)
-                            .withText(PROJECT_ATTRIBUTES.PROJECT_TITLE)
+            .nth(0)
+            .withText(PROJECT_ATTRIBUTES.PROJECT_TITLE)
         this.projectsList = Selector("li[data-type='project_list_item']")
-                            .nth(1)
-                            .withText(PROJECT_ATTRIBUTES.PROJECT_TITLE)
-        this.deleteButton = Selector ('#menu_delete_text')
+            .nth(1)
+            .withText(PROJECT_ATTRIBUTES.PROJECT_TITLE)
+        this.deleteButton = Selector('#menu_delete_text')
         this.confirmDelete = Selector('.ist_button.ist_button_red').withText('Delete')
     }
 
-    async createProject () {
+    async createProject() {
         await t
             .click(basePage.addProject)
             .typeText(this.projectTitle, PROJECT_ATTRIBUTES.PROJECT_TITLE)
@@ -30,14 +30,14 @@ class AddProjectPage {
             .wait(1000)
     }
 
-    async assertProjectCreation () {
+    async assertProjectCreation() {
         await t
             .expect(basePage.favoritesList.exists).ok()
             .expect(this.projectInFavorites.exists).ok()
         return true;
     }
 
-    async cleanUpProjects () {
+    async cleanUpProjects() {
         await t
             .rightClick(this.projectsList)
             .click(this.deleteButton)

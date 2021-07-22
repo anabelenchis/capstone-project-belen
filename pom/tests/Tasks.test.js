@@ -5,12 +5,12 @@ import upcomingPage from '../pages/UpcomingPage'
 
 fixture('Tasks creation tests')
     .page`${URLS.LOGIN_URL}`
-    .beforeEach ( async t => {
+    .beforeEach(async t => {
         await t.useRole(STANDARD_USER)
     })
 
 
-test.meta('type','smoke')('As a user I want to add a new task with Today as the due date', async t => {
+test.meta('type', 'smoke')('As a user I want to add a new task with Today as the due date', async t => {
     await todayPage.createTask(NUMBER_OF_TASKS.MINIMUM, DATE.TODAY)
     await t.expect(await todayPage.assertTasksCreated(NUMBER_OF_TASKS.MINIMUM)).ok()
     await todayPage.clearTodayPage(NUMBER_OF_TASKS.MINIMUM)

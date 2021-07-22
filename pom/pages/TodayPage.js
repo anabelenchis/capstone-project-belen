@@ -45,7 +45,7 @@ class TodayPage {
                 .rightClick(this.taskTitle)
                 .click(this.deleteButton)
                 .click(this.confirmDeleteButton).wait(1500)
-                
+
         }
     }
 }

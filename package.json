@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint ./pom/ ./.eslintrc.json",
     "test": "testcafe edge ./pom/tests",
     "test-smoke": "testcafe edge ./pom/tests --test-meta type=smoke",
     "tests-login": "testcafe edge ./pom/tests -f 'Login feature test'",
@@ -14,6 +15,12 @@
   "author": "anabelen.garcia",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "10.0.0",
     "testcafe": "1.15.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "10.1.0",
+    "eslint": "7.31.0",
+    "eslint-plugin-testcafe": "0.2.1"
   }
 }
