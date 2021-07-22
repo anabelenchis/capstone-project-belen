@@ -21,7 +21,7 @@ class AddProjectPage {
 
     async createProject() {
         await t
-            .click(basePage.addProject)
+            .click(basePage.addProject).wait(1000)
             .typeText(this.projectTitle, PROJECT_ATTRIBUTES.PROJECT_TITLE)
             .click(this.colorSelectionDropdown)
             .click(this.colorSelectionButton)
