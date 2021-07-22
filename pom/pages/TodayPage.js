@@ -18,13 +18,18 @@ class TodayPage {
     }
 
     async createTask(numberOfTasks, date) {
+        const clickSubmit = ClientFunction(() => {
+            document.querySelector('#quick_add_task_holder').click()
+        })
         let TASK_TITLE = (date == DATE.TODAY) ? NAME_OF_TASKS.TODAY : NAME_OF_TASKS.TOMORROW
-        await t.doubleClick(this.addButton,  { speed: 0.5 }).wait(500)
-        await t.click(Selector('.user_avatar.big.settings_avatar'))
+        await t.clickSubmit
+        //await t.doubleClick(this.addButton,  { speed: 0.5 }).wait(500)
+        //await t.click(Selector('.user_avatar.big.settings_avatar'))
         console.log('button clicked')
         //await t.click(this.addButton)
         for (let i = 0; i < numberOfTasks; i++) {
-            await t.click(Selector('.calendar_icon.date_today'))
+            console.log('inssside')
+            //await t.click(Selector('.calendar_icon.date_today'))
             await t.typeText(this.taskTitleField, TASK_TITLE + (i + 1), { paste: true })
             date == DATE.TOMORROW ?
                 await t
