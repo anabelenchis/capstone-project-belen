@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint ./pom/ ./.eslintrc.json",
+    "lint": "eslint ./pom/**/",
     "test": "testcafe edge ./pom/tests",
     "test-smoke": "testcafe edge ./pom/tests --test-meta type=smoke",
     "tests-login": "testcafe edge ./pom/tests -f 'Login feature test'",
