@@ -20,6 +20,7 @@ class TodayPage {
     async createTask(numberOfTasks, date) {
         let TASK_TITLE = (date == DATE.TODAY) ? NAME_OF_TASKS.TODAY : NAME_OF_TASKS.TOMORROW
         await t.doubleClick(this.addButton,  { speed: 0.5 }).wait(500)
+        await t.click(Selector('.user_avatar.big settings_avatar'))
         console.log('button clicked')
         //await t.click(this.addButton)
         for (let i = 0; i < numberOfTasks; i++) {
