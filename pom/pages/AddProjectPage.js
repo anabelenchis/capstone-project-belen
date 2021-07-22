@@ -4,7 +4,7 @@ import { PROJECT_ATTRIBUTES } from '../data/Constants'
 
 class AddProjectPage {
     constructor() {
-        this.projectTitle = Selector('.edit_project_modal_field_name')
+        this.projectTitle = Selector('#edit_project_modal_field_name')
         this.favoriteSwitch = Selector('.reactist_switch--handle')
         this.colorSelectionDropdown = Selector('.color_dropdown_toggle')
         this.colorSelectionButton = Selector('.color_dropdown_select__name').withText(PROJECT_ATTRIBUTES.PROJECT_COLOR)

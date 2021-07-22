@@ -14,4 +14,4 @@ jobs:
       - name: Run tests
         uses: DevExpress/testcafe-action@latest
         with:
-          args: "chrome ./pom/tests/Projects.test.js"
+          args: "edge ./pom/tests/Projects.test.js"
