@@ -14,4 +14,4 @@ jobs:
       - name: Run tests
         uses: DevExpress/testcafe-action@latest
         with:
-          args: "firefox:headless ./pom/tests/Projects.test.js"
+          args: "chrome ./pom/tests/Projects.test.js"
