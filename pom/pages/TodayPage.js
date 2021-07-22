@@ -7,7 +7,7 @@ class TodayPage {
         this.addButton = Selector('.plus_add_button').withText('Add task')
         this.dateButton = Selector('.date.date_today')
         this.tomorrowDate = Selector('.scheduler-suggestions-item-label').withText('Tomorrow')
-        this.taskTitleField = Selector('.public-DraftStyleDefault-block')
+        this.taskTitleField = Selector('.public-DraftStyleDefault-block.public-DraftStyleDefault-ltr')
         this.taskDescriptionField = Selector('.task_editor__description_field')
         this.submitTaskButton = Selector('.reactist_button')
         this.taskTitle = Selector('.task_list_item__content__wrapper')
