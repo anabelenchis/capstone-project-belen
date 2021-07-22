@@ -19,7 +19,7 @@ class TodayPage {
 
     async createTask(numberOfTasks, date) {
         let TASK_TITLE = (date == DATE.TODAY) ? NAME_OF_TASKS.TODAY : NAME_OF_TASKS.TOMORROW
-        await t.click(this.addButton,  { speed: 0.5 })
+        await t.doubleClick(this.addButton,  { speed: 0.5 }).wait(500)
         //await t.click(this.addButton)
         for (let i = 0; i < numberOfTasks; i++) {
             await t.click(Selector('.calendar_icon.date_today'))
