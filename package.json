@@ -4,19 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint ./pom/ ./.eslintrc.json",
+    "lint": "eslint ./pom/**/",
     "test": "testcafe edge ./pom/tests",
-    "test-smoke": "testcafe edge ./pom/tests --test-meta type=smoke",
+    "test-smoke": "testcafe edge ./pom/tests --test-meta type=smoke --reporter allure",
     "tests-login": "testcafe edge ./pom/tests -f 'Login feature test'",
     "tests-tasks": "testcafe edge ./pom/tests -f 'Tasks creation tests'",
     "tests-projects": "testcafe edge ./pom/tests -f 'Projects creations tests'",
-    "tests-login-headless": "testcafe safari,edge:headless ./pom/tests -f 'Login feature test'"
+    "tests-login-headless": "testcafe edge:headless ./pom/tests -f 'Login feature test'"
   },
   "author": "anabelen.garcia",
   "license": "ISC",
   "dependencies": {
     "dotenv": "10.0.0",
-    "testcafe": "1.15.0"
+    "testcafe": "1.15.0",
+    "testcafe-reporter-allure": "^1.0.5"
   },
   "devDependencies": {
     "babel-eslint": "10.1.0",
