@@ -2,7 +2,7 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 export const URLS = {
-    LOGIN_URL: process.env.BASE_URL+'/users/showlogin'
+    LOGIN_URL: process.env.BASE_URL + '/users/showlogin'
 }
 
 export const CREDENTIALS = {

@@ -12,14 +12,14 @@ class UpcomingPage {
 
     async assertTasksCreated(numberOfTasksCreated) {
         await t.click(basePage.upcoming).wait(1000)
-        for (var i = 0; i < numberOfTasksCreated; i++) {
+        for (let i = 0; i < numberOfTasksCreated; i++) {
             await t.expect(this.taskTitle.nth(i).innerText).contains(NAME_OF_TASKS.TOMORROW + (i + 1))
         }
         return true;
     }
 
     async clearUpcomingPage(numberOfTasksCreated) {
-        for (var i = 0; i < numberOfTasksCreated; i++) {
+        for (let i = 0; i < numberOfTasksCreated; i++) {
             await t
                 .rightClick(this.taskTitle)
                 .click(this.deleteButton)

@@ -20,7 +20,7 @@ class TodayPage {
     async createTask(numberOfTasks, date) {
         let TASK_TITLE = (date == DATE.TODAY) ? NAME_OF_TASKS.TODAY : NAME_OF_TASKS.TOMORROW
         await t.click(this.addButton)
-        for (var i = 0; i < numberOfTasks; i++) {
+        for (let i = 0; i < numberOfTasks; i++) {
             await t
                 .typeText(this.taskTitleField, TASK_TITLE + (i + 1), { paste: true })
             console.log(date)
@@ -34,13 +34,13 @@ class TodayPage {
         }
     }
     async assertTasksCreated(numberOfTasksCreated) {
-        for (var i = 0; i < numberOfTasksCreated; i++) {
+        for (let i = 0; i < numberOfTasksCreated; i++) {
             await t.expect(this.taskTitle.nth(i).innerText).contains(NAME_OF_TASKS.TODAY + (i + 1))
         }
         return true;
     }
     async clearTodayPage(numberOfTasksCreated) {
-        for (var i = 0; i < numberOfTasksCreated; i++) {
+        for (let i = 0; i < numberOfTasksCreated; i++) {
             await t
                 .rightClick(this.taskTitle)
                 .click(this.deleteButton)

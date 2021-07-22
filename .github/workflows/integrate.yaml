@@ -11,5 +11,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '14.x'
-      - run: npm ci
-      - run: npm run tests-login-headless
+      - name: Run tests
+        uses: DevExpress/testcafe-action@latest
+        with:
+          args: "chrome ./pom/tests/"

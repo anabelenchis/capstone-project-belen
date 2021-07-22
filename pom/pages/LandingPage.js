@@ -1,5 +1,3 @@
-import { Selector } from "testcafe"
-
 class LandingPage {
     constructor() {
 
