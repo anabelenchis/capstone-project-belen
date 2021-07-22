@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "testcafe edge ./pom/tests",
-    "test-smoke": "testcafe edge ./pom/tests --test-meta type=smoke"
+    "test-smoke": "testcafe edge ./pom/tests --test-meta type=smoke",
+    "tests-login": "testcafe edge ./pom/tests -f 'Login feature test'",
+    "tests-tasks": "testcafe edge ./pom/tests -f 'Tasks creation tests'",
+    "tests-projects": "testcafe edge ./pom/tests -f 'Projects creations tests'",
+    "tests-login-headless": "testcafe safari,edge:headless ./pom/tests -f 'Login feature test'"
   },
   "author": "anabelen.garcia",
   "license": "ISC",
