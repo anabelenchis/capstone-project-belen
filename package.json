@@ -8,7 +8,7 @@
     "test": "testcafe edge ./pom/tests",
     "test-smoke": "testcafe edge ./pom/tests --test-meta type=smoke --reporter allure",
     "tests-login": "testcafe safari ./pom/tests -f 'Login feature test'",
-    "tests-tasks": "testcafe safari ./pom/tests -f 'Tasks creation tests'",
+    "tests-tasks": "testcafe chrome:headless ./pom/tests -f 'Tasks creation tests'",
     "tests-projects": "testcafe chrome ./pom/tests -f 'Projects creations tests'",
     "tests-login-headless": "testcafe edge:headless ./pom/tests -f 'Login feature test'"
   },

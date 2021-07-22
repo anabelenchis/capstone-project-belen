@@ -33,7 +33,7 @@ export const DATE = {
 
 export const NUMBER_OF_TASKS = {
     MINIMUM: 1,
-    MAXIMUM: 10
+    MAXIMUM: 3
 }
 
 export const NAME_OF_TASKS = {

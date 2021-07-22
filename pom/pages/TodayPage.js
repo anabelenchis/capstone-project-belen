@@ -19,11 +19,11 @@ class TodayPage {
 
     async createTask(numberOfTasks, date) {
         let TASK_TITLE = (date == DATE.TODAY) ? NAME_OF_TASKS.TODAY : NAME_OF_TASKS.TOMORROW
-        await t.doubleClick(this.addButton)
+        await t.click(this.addButton)
+        await t.click(this.addButton)
         for (let i = 0; i < numberOfTasks; i++) {
             await t
                 .typeText(this.taskTitleField, TASK_TITLE + (i + 1), { paste: true })
-            console.log(date)
             date == DATE.TOMORROW ?
                 await t
                     .click(this.dateButton)
