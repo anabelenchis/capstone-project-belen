@@ -4,7 +4,7 @@ import { DATE, NAME_OF_TASKS } from '../data/Constants'
 class TodayPage {
     constructor() {
         this.pageTitle = Selector('h1').withText('Today')
-        this.addButton = Selector('.plus_add_button').withText('Add task')
+        this.addButton = Selector('.icon_add')
         this.dateButton = Selector('.date.date_today')
         this.tomorrowDate = Selector('.scheduler-suggestions-item-label').withText('Tomorrow')
         this.taskTitleField = Selector('.public-DraftStyleDefault-block.public-DraftStyleDefault-ltr')
