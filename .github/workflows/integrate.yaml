@@ -1,6 +1,5 @@
 name: End-to-End Tests
 on: [push]
-
 jobs:
   test:
     name: Run TestCafe Tests
@@ -15,4 +14,4 @@ jobs:
       - name: Run tests
         uses: DevExpress/testcafe-action@latest
         with:
- 		args: "chrome:headless ./pom/tests -f 'Login feature test'"
+ 		args: "chrome ./pom/tests/"
