@@ -9,7 +9,7 @@ class TodayPage {
         this.addButton = Selector('#quick_add_task_holder')
         this.dateButton = Selector('.date_today')
         this.tomorrowDate = Selector('.scheduler-suggestions-item-label').withText('Tomorrow')
-        this.taskTitleField = Selector('.public-DraftStyleDefault-ltr')
+        this.taskTitleField = Selector('.public-DraftStyleDefault-block.public-DraftStyleDefault-ltr')
         this.taskDescriptionField = Selector('.task_editor__description_field')
         this.submitTaskButton = Selector('.reactist_button')
         this.taskTitle = Selector('.task_list_item__content__wrapper')
@@ -21,8 +21,8 @@ class TodayPage {
 
     async createTask(numberOfTasks, date) {
         let TASK_TITLE = (date == DATE.TODAY) ? NAME_OF_TASKS.TODAY : NAME_OF_TASKS.TOMORROW
-        await t.click(this.addButton)
         for (let i = 0; i < numberOfTasks; i++) {
+            await t.click(this.addButton).wait(500)
             await t.typeText(this.taskTitleField, TASK_TITLE + (i + 1), { paste: true })
             date == DATE.TOMORROW ?
                 await t
