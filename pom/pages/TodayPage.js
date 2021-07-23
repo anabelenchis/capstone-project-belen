@@ -26,7 +26,6 @@ class TodayPage {
         let TASK_TITLE = (date == DATE.TODAY) ? NAME_OF_TASKS.TODAY : NAME_OF_TASKS.TOMORROW
         
         //await t.doubleClick(this.addButton,  { speed: 0.5 }).wait(500)
-        //console.log('button clicked')
         //await t.click(this.addButton)
         for (let i = 0; i < numberOfTasks; i++) {
             await clickSubmit()
