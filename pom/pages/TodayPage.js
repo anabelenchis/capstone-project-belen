@@ -20,15 +20,9 @@ class TodayPage {
     }
 
     async createTask(numberOfTasks, date) {
-        const clickSubmit = ClientFunction(() => {
-            document.querySelector('#quick_add_task_holder').click()
-        })
         let TASK_TITLE = (date == DATE.TODAY) ? NAME_OF_TASKS.TODAY : NAME_OF_TASKS.TOMORROW
-        //await t.doubleClick(this.addButton,  { speed: 0.5 }).wait(500)
-        //await t.click(this.addButton)
+        await t.click(this.addButton)
         for (let i = 0; i < numberOfTasks; i++) {
-            await clickSubmit()
-            //console.log('inssside')
             await t.typeText(this.taskTitleField, TASK_TITLE + (i + 1), { paste: true })
             date == DATE.TOMORROW ?
                 await t
