@@ -30,8 +30,7 @@ class TodayPage {
         //await t.click(this.addButton)
         for (let i = 0; i < numberOfTasks; i++) {
             await clickSubmit()
-            console.log('inssside')
-            //await t.click(Selector('.calendar_icon.date_today'))
+            //console.log('inssside')
             await t.typeText(this.taskTitleField, TASK_TITLE + (i + 1), { paste: true })
             date == DATE.TOMORROW ?
                 await t
