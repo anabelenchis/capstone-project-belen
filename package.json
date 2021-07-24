@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint ./pom/**/",
     "test": "testcafe chrome:headless ./pom/tests",
-    "test-smoke": "testcafe chrome:headless ./pom/tests --test-meta type=smoke --reporter slack",
+    "test-smoke": "testcafe chrome:headless ./pom/tests --test-meta type=smoke",
     "tests-login": "testcafe chrome,edge ./pom/tests -f 'Login feature test'",
     "tests-tasks": "testcafe chrome ./pom/tests -f 'Tasks creation tests'",
     "tests-projects": "testcafe chrome ./pom/tests -f 'Projects creations tests' --reporter slack",
