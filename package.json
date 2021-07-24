@@ -6,10 +6,10 @@
   "scripts": {
     "lint": "eslint ./pom/**/",
     "test": "testcafe chrome:headless ./pom/tests",
-    "test-smoke": "testcafe chrome:headless ./pom/tests --test-meta type=smoke",
+    "test-smoke": "testcafe chrome:headless ./pom/tests --test-meta type=smoke --reporter slack",
     "tests-login": "testcafe chrome,edge ./pom/tests -f 'Login feature test'",
     "tests-tasks": "testcafe chrome ./pom/tests -f 'Tasks creation tests'",
-    "tests-projects": "testcafe chrome ./pom/tests -f 'Projects creations tests'",
+    "tests-projects": "testcafe chrome ./pom/tests -f 'Projects creations tests' --reporter slack",
     "tests-login-headless": "testcafe chrome:headless ./pom/tests -f 'Login feature test'"
   },
   "author": "anabelen.garcia",
@@ -17,7 +17,8 @@
   "dependencies": {
     "dotenv": "10.0.0",
     "testcafe": "1.15.0",
-    "testcafe-reporter-allure": "^1.0.5"
+    "testcafe-reporter-allure": "^1.0.5",
+    "testcafe-reporter-slack": "^0.0.6"
   },
   "devDependencies": {
     "babel-eslint": "10.1.0",
