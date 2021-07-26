@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint ./pom/**/",
+    "lint": "eslint",
     "test": "testcafe chrome:headless ./pom/tests",
     "test-smoke": "testcafe chrome:headless ./pom/tests --test-meta type=smoke",
     "tests-login": "testcafe chrome,edge ./pom/tests -f 'Login feature test'",
@@ -20,8 +20,6 @@
     "testcafe-reporter-slack": "^0.0.6"
   },
   "devDependencies": {
-    "babel-eslint": "10.1.0",
-    "eslint": "7.31.0",
-    "eslint-plugin-testcafe": "0.2.1"
+    "eslint": "^7.31.0"
   }
 }

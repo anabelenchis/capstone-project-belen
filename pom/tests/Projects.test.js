@@ -3,7 +3,6 @@ import { URLS } from '../data/Constants'
 import addProjectPage from '../pages/AddProjectPage'
 
 fixture('Projects creations tests')
-    .page`${URLS.LOGIN_URL}`
     .beforeEach(async t => {
         await t.useRole(STANDARD_USER)
     })

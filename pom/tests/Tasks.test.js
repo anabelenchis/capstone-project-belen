@@ -4,7 +4,6 @@ import todayPage from '../pages/TodayPage'
 import upcomingPage from '../pages/UpcomingPage'
 
 fixture('Tasks creation tests')
-    .page`${URLS.LOGIN_URL}`
     .beforeEach(async t => {
         await t.useRole(STANDARD_USER)
     })
