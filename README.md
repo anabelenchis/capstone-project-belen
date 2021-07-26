@@ -1,4 +1,4 @@
-# Ana Belen's POC Front-end
+# POC Front-end automation
 
 Test automation project built using Testcafe framework to do automated tests for [Todoist app](https://todoist.com/).
 
