@@ -20,7 +20,7 @@ VALID_USER_PASSWORD= your valid password
 ```
 ## Run test scripts
 
-*To run the test scripts put the following commands in the terminal while located in the folder of the project. *
+*To run the test scripts put the following commands in the terminal while located in the folder of the project.*
 
 To run all tests located in the test folder: 
 
