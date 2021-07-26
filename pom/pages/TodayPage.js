@@ -1,6 +1,5 @@
 import { Selector, t } from "testcafe"
-import { DATE, NAME_OF_TASKS } from '../data/Constants'
-import { ClientFunction } from 'testcafe';
+import { DATE, NAME_OF_TASKS, WAIT } from '../data/Constants'
 
 
 class TodayPage {
@@ -22,15 +21,15 @@ class TodayPage {
     async createTask(numberOfTasks, date) {
         let TASK_TITLE = (date == DATE.TODAY) ? NAME_OF_TASKS.TODAY : NAME_OF_TASKS.TOMORROW
         for (let i = 0; i < numberOfTasks; i++) {
-            await t.click(this.addButton).wait(500)
+            await t.click(this.addButton).wait(WAIT.LOADVIEW)
             await t.typeText(this.taskTitleField, TASK_TITLE + (i + 1), { paste: true })
             date == DATE.TOMORROW ?
                 await t
                     .click(this.dateButton)
                     .click(this.tomorrowDate)
                     .click(this.submitTaskButton)
-                    .wait(1500)
-                : await t.click(this.submitTaskButton).wait(1500)
+                    .wait(WAIT.LOADPAGE)
+                : await t.click(this.submitTaskButton).wait(WAIT.LOADPAGE)
         }
     }
     async assertTasksCreated(numberOfTasksCreated) {
@@ -44,7 +43,7 @@ class TodayPage {
             await t
                 .rightClick(this.taskTitle)
                 .click(this.deleteButton)
-                .click(this.confirmDeleteButton).wait(1500)
+                .click(this.confirmDeleteButton).wait(WAIT.LOADPAGE)
 
         }
     }

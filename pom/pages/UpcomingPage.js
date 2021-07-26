@@ -1,6 +1,6 @@
 import { Selector, t } from "testcafe"
 import basePage from './BasePage'
-import { NAME_OF_TASKS } from '../data/Constants'
+import { NAME_OF_TASKS, WAIT } from '../data/Constants'
 
 class UpcomingPage {
     constructor() {
@@ -11,7 +11,7 @@ class UpcomingPage {
     }
 
     async assertTasksCreated(numberOfTasksCreated) {
-        await t.click(basePage.upcoming).wait(1000)
+        await t.click(basePage.upcoming).wait(WAIT.LOADPAGE)
         for (let i = 0; i < numberOfTasksCreated; i++) {
             await t.expect(this.taskTitle.nth(i).innerText).contains(NAME_OF_TASKS.TOMORROW + (i + 1))
         }
@@ -23,7 +23,7 @@ class UpcomingPage {
             await t
                 .rightClick(this.taskTitle)
                 .click(this.deleteButton)
-                .click(this.confirmDeleteButton).wait(1500)
+                .click(this.confirmDeleteButton).wait(WAIT.LOADPAGE)
         }
     }
 }

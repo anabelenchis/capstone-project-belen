@@ -45,3 +45,8 @@ export const PROJECT_ATTRIBUTES = {
     PROJECT_TITLE: 'This is the title',
     PROJECT_COLOR: 'Orange'
 }
+
+export const WAIT = {
+    LOADPAGE: 1500,
+    LOADVIEW: 500
+}

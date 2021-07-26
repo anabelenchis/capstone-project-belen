@@ -1,6 +1,6 @@
 import { Selector, t } from "testcafe"
 import basePage from '../pages/BasePage'
-import { PROJECT_ATTRIBUTES } from '../data/Constants'
+import { PROJECT_ATTRIBUTES, WAIT } from '../data/Constants'
 
 class AddProjectPage {
     constructor() {
@@ -27,7 +27,7 @@ class AddProjectPage {
             .click(this.colorSelectionButton)
             .click(this.favoriteSwitch)
             .click(this.addButton)
-            .wait(1000)
+            .wait(WAIT.LOADPAGE)
     }
 
     async assertProjectCreation() {
@@ -42,7 +42,7 @@ class AddProjectPage {
             .rightClick(this.projectsList)
             .click(this.deleteButton)
             .click(this.confirmDelete)
-            .wait(1000)
+            .wait(WAIT.LOADPAGE)
     }
 }
 
