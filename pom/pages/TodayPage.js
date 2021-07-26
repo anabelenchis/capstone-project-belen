@@ -38,14 +38,17 @@ class TodayPage {
         }
         return true;
     }
-    async clearTodayPage(numberOfTasksCreated) {
-        for (let i = 0; i < numberOfTasksCreated; i++) {
-            await t
-                .rightClick(this.taskTitle)
-                .click(this.deleteButton)
-                .click(this.confirmDeleteButton).wait(WAIT.LOADPAGE)
-
+    async clearTodayPage() {
+        const tasksCount = await this.taskTitle.count;
+        if (tasksCount > 0) {
+            for (let i = 0; i < tasksCount; i++) {
+                await t
+                    .rightClick(this.taskTitle.nth(0))
+                    .click(this.deleteButton)
+                    .click(this.confirmDeleteButton).wait(WAIT.LOADPAGE)
+            }
         }
+
     }
 }
 
