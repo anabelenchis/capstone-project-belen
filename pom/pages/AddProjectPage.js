@@ -15,6 +15,7 @@ class AddProjectPage {
         this.projectsList = Selector("li[data-type='project_list_item']")
             .nth(1)
             .withText(PROJECT_ATTRIBUTES.PROJECT_TITLE)
+        this.projectElement = Selector("li[data-type='project_list_item']")
         this.deleteButton = Selector('#menu_delete_text')
         this.confirmDelete = Selector('.ist_button.ist_button_red').withText('Delete')
     }
@@ -38,11 +39,19 @@ class AddProjectPage {
     }
 
     async cleanUpProjects() {
-        await t
-            .rightClick(this.projectsList)
-            .click(this.deleteButton)
-            .click(this.confirmDelete)
-            .wait(WAIT.LOADPAGE)
+        var projectsCount = await this.projectElement.count
+        console.log('===========',projectsCount)
+        if (projectsCount > 0) {
+            do {
+                await t
+                    .rightClick(this.projectElement.nth(projectsCount - 1))
+                    .click(this.deleteButton)
+                    .click(this.confirmDelete)
+                    .wait(WAIT.LOADPAGE)
+                    var projectsCount = await this.projectElement.count
+                }
+            while (projectsCount > 0);
+        }
     }
 }
 
