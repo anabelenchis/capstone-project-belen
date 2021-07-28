@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint",
+    "api-testing": "newman run './api_testing/Todoist API.postman_collection.json' -e './api_testing/Todoist.postman_environment.json' ",
     "test": "testcafe chrome:headless ./pom/tests",
     "test-smoke": "testcafe chrome:headless ./pom/tests --test-meta type=smoke",
     "tests-login": "testcafe chrome,edge ./pom/tests -f 'Login feature test'",
@@ -17,9 +18,10 @@
   "dependencies": {
     "dotenv": "10.0.0",
     "testcafe": "1.15.0",
-    "testcafe-reporter-slack": "^0.0.6"
+    "testcafe-reporter-slack": "0.0.6"
   },
   "devDependencies": {
-    "eslint": "^7.31.0"
+    "eslint": "7.31.0",
+    "newman": "5.2.4"
   }
 }
