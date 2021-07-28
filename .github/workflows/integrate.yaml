@@ -14,6 +14,7 @@ jobs:
       - run: npm ci
       - run: npm run lint
   Api-Tests:
+    needs: Lint
     name: Run api-tests
     runs-on: ubuntu-latest
     steps:
