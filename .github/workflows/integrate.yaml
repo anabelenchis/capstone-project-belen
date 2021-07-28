@@ -25,4 +25,4 @@ jobs:
         with:
           node-version: '14.x'
       - run: npm install -g newman
-      - run: newman run ./API_Testing/Todoist-API.postman_collection.json -e ./API_Testing/Todoist.postman_environment.json
+      - run: npm run api-testing
