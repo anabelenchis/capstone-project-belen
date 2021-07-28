@@ -23,5 +23,5 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '14.x'
-      - run: npm -g newman
+      - run: npm install -g newman
       - run: npm run api-testing
