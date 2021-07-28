@@ -13,3 +13,15 @@ jobs:
           node-version: '14.x'
       - run: npm ci
       - run: npm run lint
+  Api-Tests:
+    name: Run api-tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+      - name: Set up node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+      - run: npm ci
+      - run: npm run api-testing

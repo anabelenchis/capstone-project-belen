@@ -40,7 +40,6 @@ class AddProjectPage {
 
     async cleanUpProjects() {
         var projectsCount = await this.projectElement.count
-        console.log('===========',projectsCount)
         if (projectsCount > 0) {
             do {
                 await t
