@@ -23,5 +23,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '14.x'
+      - uses: matt-ball/newman-action@master
       - run: npm ci
       - run: npm run api-testing
