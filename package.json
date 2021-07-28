@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint",
-    "api-testing": "newman run './api_testing/Todoist API.postman_collection.json' -e './api_testing/Todoist.postman_environment.json' ",
+    "api-testing": "newman run './api_testing/Todoist API.postman_collection.json' -e './api_testing/Todoist.postman_environment.json'",
     "test": "testcafe chrome:headless ./pom/tests",
     "test-smoke": "testcafe chrome:headless ./pom/tests --test-meta type=smoke",
     "tests-login": "testcafe chrome,edge ./pom/tests -f 'Login feature test'",
