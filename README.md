@@ -2,6 +2,21 @@
 
 Test automation project built using Testcafe framework to do automated tests for [Todoist app](https://todoist.com/).
 
+# Project Structure
+
+├── ...
+├── API_Testing             # Folder where the API tests are located, including test script and environmental variables
+├── pom                     # Folder where all test data, pages, and tests are located
+│   ├── data                # Data used for our tests
+│   ├── pages               # Pages in which the website is divided for testing purposes
+│   └── tests               # Tests files
+└── ...
+
+# Pre-requisites
+
+1. Node.js
+2. Browsers used: Chrome and Edge
+
 ## Installation 
 
 To be able to run the test scripts please install the dependencies by writing the following command in the terminal in the folder where the project is located: 
