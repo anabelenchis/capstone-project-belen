@@ -102,7 +102,7 @@
 											"});",
 											"",
 											"pm.test(\"Content-Type is application/json\", function () {",
-											"    pm.response.to.have.header(\"Content-Type\", \"application/json\");",
+											"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.be.eql(\"application/json\")",
 											"});",
 											"",
 											"var jsonData = pm.response.json()",
@@ -211,7 +211,7 @@
 											"});",
 											"",
 											"pm.test(\"Content-Type is application/json\", function () {",
-											"    pm.response.to.have.header(\"Content-Type\", \"application/json\");",
+											"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.be.eql(\"application/json\");",
 											"});",
 											"",
 											"pm.test(\"Assert project ID\", function () {",
@@ -530,8 +530,8 @@
 					"script": {
 						"type": "text/javascript",
 						"exec": [
-							"pm.test(\"Response time is less than 600ms\", function () {",
-							"    pm.expect(pm.response.responseTime).to.be.below(600);",
+							"pm.test(\"Response time is less than 700ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(700);",
 							"});"
 						]
 					}
@@ -556,7 +556,7 @@
 											"});",
 											"",
 											"pm.test(\"Content-Type is application/json\", function () {",
-											"    pm.response.to.have.header(\"Content-Type\", \"application/json\");",
+											"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.be.eql(\"application/json\")",
 											"});"
 										],
 										"type": "text/javascript"
@@ -647,7 +647,7 @@
 											"});",
 											"",
 											"pm.test(\"Content-Type is application/json\", function () {",
-											"    pm.response.to.have.header(\"Content-Type\", \"application/json\");",
+											"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.be.eql(\"application/json\")",
 											"});",
 											"",
 											"var jsonData = pm.response.json()",
@@ -768,7 +768,7 @@
 											"});",
 											"",
 											"pm.test(\"Content-Type is application/json\", function () {",
-											"    pm.response.to.have.header(\"Content-Type\", \"application/json\");",
+											"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.be.eql(\"application/json\")",
 											"});",
 											"",
 											"pm.test(\"Assert task ID\", function () {",
@@ -1171,8 +1171,8 @@
 					"script": {
 						"type": "text/javascript",
 						"exec": [
-							"pm.test(\"Response time is less than 600ms\", function () {",
-							"    pm.expect(pm.response.responseTime).to.be.below(600);",
+							"pm.test(\"Response time is less than 700ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(700);",
 							"});"
 						]
 					}

@@ -1,11 +1,11 @@
 import { Selector, t } from "testcafe"
-import { DATE, NAME_OF_TASKS, WAIT } from '../data/Constants'
+import { DATE, WAIT } from '../data/Constants'
+import basePage from './BasePage'
 
 
 class TodayPage {
     constructor() {
         this.pageTitle = Selector('h1').withText('Today')
-        this.addButton = Selector('#quick_add_task_holder')
         this.dateButton = Selector('.date_today')
         this.tomorrowDate = Selector('.scheduler-suggestions-item-label').withText('Tomorrow')
         this.taskTitleField = Selector('.public-DraftStyleDefault-block.public-DraftStyleDefault-ltr')
@@ -18,11 +18,10 @@ class TodayPage {
         this.confirmDeleteButton = Selector('.ist_button_red').withText('Delete')
     }
 
-    async createTask(numberOfTasks, date) {
-        let TASK_TITLE = (date == DATE.TODAY) ? NAME_OF_TASKS.TODAY : NAME_OF_TASKS.TOMORROW
+    async createTask(taskName, numberOfTasks, date) {
         for (let i = 0; i < numberOfTasks; i++) {
-            await t.click(this.addButton).wait(WAIT.LOADVIEW)
-            await t.typeText(this.taskTitleField, TASK_TITLE + (i + 1), { paste: true })
+            await t.click(basePage.addTaskButton)
+            await t.typeText(this.taskTitleField, taskName + (i + 1), { paste: true })
             date == DATE.TOMORROW ?
                 await t
                     .click(this.dateButton)
@@ -32,9 +31,10 @@ class TodayPage {
                 : await t.click(this.submitTaskButton).wait(WAIT.LOADPAGE)
         }
     }
-    async assertTasksCreated(numberOfTasksCreated) {
+    async assertTasksCreated(taskName, numberOfTasksCreated) {
+        await t.click(basePage.todaySection)
         for (let i = 0; i < numberOfTasksCreated; i++) {
-            await t.expect(this.taskTitle.nth(i).innerText).contains(NAME_OF_TASKS.TODAY + (i + 1))
+            await t.expect(this.taskTitle.nth(i).innerText).contains(taskName + (i + 1))
         }
         return true;
     }

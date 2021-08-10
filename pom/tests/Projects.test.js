@@ -1,15 +1,18 @@
 import { STANDARD_USER } from '../data/Roles'
-import { URLS } from '../data/Constants'
-import addProjectPage from '../pages/AddProjectPage'
+import { PROJECT_ATTRIBUTES } from '../data/Constants'
+import basePage from '../pages/BasePage'
+import projectPage from '../pages/ProjectPage'
 
 fixture('Projects creations tests')
 
 test
     .before(async t => {
         await t.useRole(STANDARD_USER)
-        await addProjectPage.cleanUpProjects()
+        await basePage.cleanUpProjects()
+        await t.expect(basePage.projectElement.exists).notOk()
     })
     .meta('type', 'smoke')('As a user I want to create a new project and add it to my favorites', async t => {
-        await addProjectPage.createProject()
-        await t.expect(await addProjectPage.assertProjectCreation()).ok()
+        await basePage.createProject(PROJECT_ATTRIBUTES.PROJECT_TITLE, PROJECT_ATTRIBUTES.PROJECT_COLOR, PROJECT_ATTRIBUTES.FAVORITE_PROJECT)
+        await t.click(basePage.favoriteListItem.withText(PROJECT_ATTRIBUTES.PROJECT_TITLE))
+        await t.expect(await projectPage.assertProjectCreation(PROJECT_ATTRIBUTES.PROJECT_TITLE, PROJECT_ATTRIBUTES.PROJECT_COLOR, PROJECT_ATTRIBUTES.FAVORITE_PROJECT)).ok()
     })

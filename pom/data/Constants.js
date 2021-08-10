@@ -27,8 +27,8 @@ export const MESSAGES = {
 }
 
 export const DATE = {
-    TODAY: 'TODAY',
-    TOMORROW: 'TOMORROW'
+    TODAY: 'Today',
+    TOMORROW: 'Tomorrow'
 }
 
 export const NUMBER_OF_TASKS = {
@@ -42,8 +42,10 @@ export const NAME_OF_TASKS = {
 }
 
 export const PROJECT_ATTRIBUTES = {
-    PROJECT_TITLE: 'This is the title',
-    PROJECT_COLOR: 'Orange'
+    PROJECT_TITLE: 'experimento',
+    PROJECT_COLOR: 'Orange',
+    FAVORITE_PROJECT: true,
+    REGULAR_PROJECT: false
 }
 
 export const WAIT = {

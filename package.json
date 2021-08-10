@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint",
+    "lint": "eslint ./pom",
     "api-testing": "newman run './API_Testing/Todoist-API.postman_collection.json' -e './API_Testing/Todoist.postman_environment.json'",
-    "test": "testcafe chrome:headless ./pom/tests",
+    "test": "testcafe chrome ./pom/tests",
     "test-smoke": "testcafe chrome:headless ./pom/tests --test-meta type=smoke",
-    "tests-login": "testcafe chrome,edge ./pom/tests -f 'Login feature test'",
+    "tests-login": "testcafe chrome:headless,edge:headless ./pom/tests -f 'Login feature test'",
     "tests-tasks": "testcafe chrome ./pom/tests -f 'Tasks creation tests'",
     "tests-projects": "testcafe chrome ./pom/tests -f 'Projects creations tests'",
     "tests-login-headless": "testcafe chrome:headless ./pom/tests -f 'Login feature test'"
