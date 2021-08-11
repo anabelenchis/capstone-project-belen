@@ -22,13 +22,17 @@ class TodayPage {
         for (let i = 0; i < numberOfTasks; i++) {
             await t.click(basePage.addTaskButton)
             await t.typeText(this.taskTitleField, taskName + (i + 1), { paste: true })
-            date == DATE.TOMORROW ?
+            if (date == DATE.TOMORROW) {
                 await t
                     .click(this.dateButton)
                     .click(this.tomorrowDate)
                     .click(this.submitTaskButton)
                     .wait(WAIT.LOADPAGE)
-                : await t.click(this.submitTaskButton).wait(WAIT.LOADPAGE)
+            } else if (date == DATE.TODAY) {
+                await t
+                    .click(this.submitTaskButton)
+                    .wait(WAIT.LOADPAGE)
+            }
         }
     }
     async assertTasksCreated(taskName, numberOfTasksCreated) {

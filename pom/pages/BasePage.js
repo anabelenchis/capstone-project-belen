@@ -44,7 +44,9 @@ class BasePage {
             .typeText(this.projectTitle, projectName)
             .click(this.colorSelectionDropdown)
             .click(this.colorSelectionButton.withText(projectColor))
-        isFavorite == true ? await t.click(this.favoriteSwitch) : null
+        if (isFavorite == true) {
+            await t.click(this.favoriteSwitch)
+        }
         await t
             .click(this.submitProject)
             .wait(WAIT.LOADPAGE)
