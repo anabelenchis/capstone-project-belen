@@ -2,12 +2,12 @@ import { Selector, t } from "testcafe"
 
 class LoginPage {
     constructor() {
-        //Input Fields
+        // Input Fields
         this.usernameInput = Selector('#email')
         this.passwordInput = Selector('#password')
-        //Buttons
+        // Buttons
         this.loginButton = Selector('.submit_btn').withText('Log in')
-        //Messages
+        // Messages
         this.errorMessage = Selector('.error_msg')
     }
 

@@ -1,9 +1,13 @@
 {
     "env": {
         "browser": true,
+        "node": true,
         "es2021": true
     },
-    "extends": "eslint:recommended",
+    "plugins": [
+        "testcafe"
+      ],
+    "extends": ["eslint:recommended", "plugin:testcafe/recommended"],
     "parserOptions": {
         "ecmaVersion": 12,
         "sourceType": "module"
@@ -194,8 +198,8 @@
         ],
         "object-property-newline": "error",
         "object-shorthand": "error",
-        "one-var": "error",
-        "one-var-declaration-per-line": "error",
+        "one-var": "off",
+        "one-var-declaration-per-line": "off",
         "operator-assignment": "error",
         "operator-linebreak": "off",
         "padded-blocks": "off",

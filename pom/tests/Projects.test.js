@@ -6,12 +6,12 @@ import projectPage from '../pages/ProjectPage'
 fixture('Projects creations tests')
 
 test
-    .before(async t => {
+    .before(async (t) => {
         await t.useRole(STANDARD_USER)
         await basePage.cleanUpProjects()
         await t.expect(basePage.projectElement.exists).notOk()
     })
-    .meta('type', 'smoke')('As a user I want to create a new project and add it to my favorites', async t => {
+    .meta('type', 'smoke')('As a user I want to create a new project and add it to my favorites', async (t) => {
         await basePage.createProject(PROJECT_ATTRIBUTES.PROJECT_TITLE, PROJECT_ATTRIBUTES.PROJECT_COLOR, PROJECT_ATTRIBUTES.FAVORITE_PROJECT)
         await t.click(basePage.favoriteListItem.withText(PROJECT_ATTRIBUTES.PROJECT_TITLE))
         await t.expect(await projectPage.assertProjectCreation(PROJECT_ATTRIBUTES.PROJECT_TITLE, PROJECT_ATTRIBUTES.PROJECT_COLOR, PROJECT_ATTRIBUTES.FAVORITE_PROJECT)).ok()

@@ -1,6 +1,6 @@
 import { Selector, t } from "testcafe"
 import basePage from './BasePage'
-import { NAME_OF_TASKS, WAIT } from '../data/Constants'
+import { WAIT } from '../data/Constants'
 
 class UpcomingPage {
     constructor() {
@@ -17,7 +17,7 @@ class UpcomingPage {
         await t.click(basePage.upcomingSection)
         for (let i = 0; i < numberOfTasksCreated; i++) {
             let targetText = await this.sectionWraper.withText(dueDate).find(this.taskListItemStyle).nth(i).innerText
-            if (targetText.includes(taskName+(i+1))==false) {
+            if (targetText.includes(taskName + (i + 1)) == false) {
                 return false
             }
         }
@@ -25,7 +25,7 @@ class UpcomingPage {
     }
 
     async clearUpcomingPage() {
-        var tasksCount = await this.taskItem.count
+        let tasksCount = await this.taskItem.count
         if (tasksCount > 0) {
             for (let i = 0; i < tasksCount; i++) {
                 await t

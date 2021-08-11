@@ -21,7 +21,8 @@
     "testcafe-reporter-slack": "0.0.6"
   },
   "devDependencies": {
-    "eslint": "7.31.0",
+    "eslint": "^7.31.0",
+    "eslint-plugin-testcafe": "^0.2.1",
     "newman": "5.2.4"
   }
 }

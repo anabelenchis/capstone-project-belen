@@ -1,6 +1,5 @@
+/* eslint-disable one-var */
 import { Selector, t } from "testcafe"
-import basePage from './BasePage'
-import { PROJECT_ATTRIBUTES, WAIT } from '../data/Constants'
 
 class ProjectPage {
     constructor() {
@@ -11,22 +10,22 @@ class ProjectPage {
         this.favoritesSwitch = Selector('.reactist_switch')
     }
 
-    async assertProjectCreation(projectName, projectColor, isFavorite=false) {
+    async assertProjectCreation(projectName, projectColor, isFavorite = false) {
         let favoriteFlag = isFavorite
         await t
             .click(this.projectOptions)
             .click(this.editProject)
         let projectCreated = {
-            title: await this.editProjectTitle.value,
             color: await this.editColor.innerText,
-            isFavorite: await this.favoritesSwitch.hasClass('reactist_switch--checked')
+            isFavorite: await this.favoritesSwitch.hasClass('reactist_switch--checked'),
+            title: await this.editProjectTitle.value
         }
         if (projectCreated.title == projectName && projectCreated.color == projectColor 
             && projectCreated.isFavorite && favoriteFlag) {
-                return true;
-            } else {
-                return false
-            }
+            return true;
+        } 
+        return false
+            
     }
 }
 

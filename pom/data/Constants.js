@@ -2,26 +2,26 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 export const URLS = {
-    LOGIN_URL: process.env.BASE_URL + '/users/showlogin'
+    LOGIN_URL: `${process.env.BASE_URL}/users/showlogin`
 }
 
 export const CREDENTIALS = {
-    VALID_USER: {
-        USERNAME: process.env.VALID_USER,
-        PASSWORD: process.env.VALID_USER_PASSWORD
+    INVALID_USER: {
+        PASSWORD: 'INVALID PASSWORD',
+        USERNAME: 'INVALID USERNAME'
     },
 
-    INVALID_USER: {
-        USERNAME: 'INVALID USERNAME',
-        PASSWORD: 'INVALID PASSWORD'
+    VALID_USER: {
+        PASSWORD: process.env.VALID_USER_PASSWORD,
+        USERNAME: process.env.VALID_USER
     }
 }
 
 export const MESSAGES = {
     ERROR: {
         LOGIN_PAGE: {
-            INVALID_EMAIL: 'Invalid email address.',
-            INVALID_CREDENTIALS: 'Wrong email or password.'
+            INVALID_CREDENTIALS: 'Wrong email or password.',
+            INVALID_EMAIL: 'Invalid email address.'
         }
     }
 }
@@ -32,8 +32,8 @@ export const DATE = {
 }
 
 export const NUMBER_OF_TASKS = {
-    MINIMUM: 1,
-    MAXIMUM: 10
+    MAXIMUM: 10,
+    MINIMUM: 1
 }
 
 export const NAME_OF_TASKS = {
@@ -42,9 +42,9 @@ export const NAME_OF_TASKS = {
 }
 
 export const PROJECT_ATTRIBUTES = {
-    PROJECT_TITLE: 'experimento',
-    PROJECT_COLOR: 'Orange',
     FAVORITE_PROJECT: true,
+    PROJECT_COLOR: 'Orange',
+    PROJECT_TITLE: 'experimento',
     REGULAR_PROJECT: false
 }
 
