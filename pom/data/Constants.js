@@ -44,7 +44,7 @@ export const NAME_OF_TASKS = {
 export const PROJECT_ATTRIBUTES = {
     FAVORITE_PROJECT: true,
     PROJECT_COLOR: 'Orange',
-    PROJECT_TITLE: 'experimento',
+    PROJECT_TITLE: 'final final',
     REGULAR_PROJECT: false
 }
 

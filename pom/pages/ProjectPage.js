@@ -21,7 +21,7 @@ class ProjectPage {
             title: await this.editProjectTitle.value
         }
         if (projectCreated.title == projectName && projectCreated.color == projectColor 
-            && projectCreated.isFavorite && favoriteFlag) {
+            && projectCreated.isFavorite == favoriteFlag) {
             return true;
         } 
         return false

@@ -1,6 +1,5 @@
 import { Selector, t } from "testcafe"
 import basePage from './BasePage'
-import { WAIT } from '../data/Constants'
 
 class UpcomingPage {
     constructor() {
@@ -31,7 +30,7 @@ class UpcomingPage {
                 await t
                     .rightClick(this.taskItem.nth(0))
                     .click(this.deleteButton)
-                    .click(this.confirmDeleteButton).wait(WAIT.LOADPAGE)
+                    .click(this.confirmDeleteButton)
             }
         }
     }

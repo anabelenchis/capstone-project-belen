@@ -2,3 +2,4 @@ node_modules
 .vscode/settings.json
 allure
 .env
+package-lock.json

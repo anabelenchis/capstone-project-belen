@@ -1,12 +1,13 @@
 import { Selector, t } from "testcafe"
-import { WAIT } from '../data/Constants'
+import { DATE } from '../data/Constants'
 
 
 class BasePage {
     constructor() {
         // Sections
         this.upcomingSection = Selector('.item_content').withText('Upcoming')
-        this.todaySection = Selector('.item_content').withText('Today')        
+        this.todaySection = Selector('.item_content').withText('Today')
+        this.projectsPanel = Selector('.sidebar_expansion_panel')
         // Projects Modal
         this.projectTitle = Selector('#edit_project_modal_field_name')
         this.addProject = Selector("button[aria-label='Add Project']")
@@ -21,6 +22,27 @@ class BasePage {
         this.addTaskButton = Selector('#quick_add_task_holder')
         this.confirmDelete = Selector('.ist_button.ist_button_red').withText('Delete')
         this.submitProject = Selector('.ist_button').withText('Add')
+        // Task creation modal
+        this.taskTitleField = Selector('.public-DraftStyleDefault-block.public-DraftStyleDefault-ltr')
+        this.dateButton = Selector('.date_today')
+        this.tomorrowDate = Selector('.scheduler-suggestions-item-label').withText('Tomorrow')
+        this.submitTaskButton = Selector('.reactist_button')
+
+    }
+
+    async createTask(taskName, numberOfTasks, date) {
+        for (let i = 0; i < numberOfTasks; i++) {
+            await t
+                .hover(this.addTaskButton)
+                .click(this.addTaskButton)
+                .typeText(this.taskTitleField, taskName + (i + 1), { paste: true })
+            if (date == DATE.TOMORROW) {
+                await t
+                    .click(this.dateButton)
+                    .click(this.tomorrowDate) 
+            }
+            await t.click(this.submitTaskButton)
+        }
     }
 
     async cleanUpProjects() {
@@ -31,7 +53,6 @@ class BasePage {
                     .rightClick(this.projectElement.nth(projectsCount - 1))
                     .click(this.deleteButton)
                     .click(this.confirmDelete)
-                    .wait(WAIT.LOADPAGE)
                 projectsCount = await this.projectElement.count
             }
             while (projectsCount > 0);
@@ -40,7 +61,8 @@ class BasePage {
 
     async createProject(projectName, projectColor, isFavorite = false) {
         await t
-            .doubleClick(this.addProject)
+            .hover(this.projectsPanel)
+            .click(this.addProject)
             .typeText(this.projectTitle, projectName)
             .click(this.colorSelectionDropdown)
             .click(this.colorSelectionButton.withText(projectColor))
@@ -49,7 +71,6 @@ class BasePage {
         }
         await t
             .click(this.submitProject)
-            .wait(WAIT.LOADPAGE)
     }
 }
 
