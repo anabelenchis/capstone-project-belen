@@ -530,8 +530,8 @@
 					"script": {
 						"type": "text/javascript",
 						"exec": [
-							"pm.test(\"Response time is less than 700ms\", function () {",
-							"    pm.expect(pm.response.responseTime).to.be.below(700);",
+							"pm.test(\"Response time is less than 800ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(800);",
 							"});"
 						]
 					}
@@ -1171,8 +1171,8 @@
 					"script": {
 						"type": "text/javascript",
 						"exec": [
-							"pm.test(\"Response time is less than 700ms\", function () {",
-							"    pm.expect(pm.response.responseTime).to.be.below(700);",
+							"pm.test(\"Response time is less than 800ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(800);",
 							"});"
 						]
 					}
